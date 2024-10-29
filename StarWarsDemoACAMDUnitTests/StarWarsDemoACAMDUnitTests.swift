@@ -17,7 +17,19 @@ struct StarWarsDemoACAMDUnitTests {
 
     @Test func cardShouldHaveExpectedNumberOfSkills() async throws {
         // Arrange.
-        let sut = CardDTO()
+        let sut = CardDTO(
+            nombre: "Luke Skywalker",
+            raza: "Humano",
+            descripcion:
+                "Héroe de la Alianza Rebelde y Caballero Jedi. Hijo de Anakin Skywalker y Padmé Amidala.",
+            planetaOrigen: "Tatooine",
+            epoca: "Era del Imperio Galáctico",
+            afiliacion: "Alianza Rebelde, Nueva República",
+            habilidades: "Uso de la Fuerza, combate con sable de luz, pilotaje",
+            armas: "Sable de luz",
+            id: 6629,
+            imagen: "lukeskywalker"
+        )
         let expected = 3
 
         // Act.
@@ -26,5 +38,4 @@ struct StarWarsDemoACAMDUnitTests {
         // Assert.
         #expect(expected == actual)
     }
-
 }
