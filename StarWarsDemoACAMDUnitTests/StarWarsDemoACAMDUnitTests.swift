@@ -15,7 +15,10 @@ extension Tag {
 
 struct StarWarsDemoACAMDUnitTests {
 
-    @Test func cardShouldHaveExpectedNumberOfSkills() async throws {
+    @Test(
+        "Card should have expected number of skills from CardDTO.",
+        .tags(.cardDTO))
+    func cardShouldHaveExpectedNumberOfSkills() async throws {
         // Arrange.
         let sut = CardDTO(
             nombre: "Luke Skywalker",
@@ -39,7 +42,8 @@ struct StarWarsDemoACAMDUnitTests {
         #expect(expected == actual)
     }
 
-    @Test func cardShouldHaveAllSkillsCapitalized() async throws {
+    @Test("Card should have all skills capitalized.", .tags(.cardDTO))
+    func cardShouldHaveAllSkillsCapitalized() async throws {
         // Arrange.
         let sut = CardDTO(
             nombre: "Luke Skywalker",
