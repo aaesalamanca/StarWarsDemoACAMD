@@ -7,10 +7,24 @@
 
 import Testing
 
+@testable import StarWarsDemoACAMD
+
+extension Tag {
+    @Tag static var cardDTO: Self
+}
+
 struct StarWarsDemoACAMDUnitTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func cardShouldHaveExpectedNumberOfSkills() async throws {
+        // Arrange.
+        let sut = CardDTO()
+        let expected = 3
+
+        // Act.
+        let actual = sut.toCard.habilidades.count
+
+        // Assert.
+        #expect(expected == actual)
     }
 
 }
