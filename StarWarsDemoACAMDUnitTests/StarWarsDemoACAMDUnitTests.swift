@@ -117,4 +117,16 @@ struct StarWarsDemoACAMDUnitTests {
             _ = try sut.getCards()
         }
     }
+
+    @Test(
+        "CardViewModel should not contain an empty array of Card when the file exists.",
+        .tags(.cardViewModel))
+    func cardViewModelShouldNotContainEmptyArrayOfCard() async throws {
+        // Arrange.
+        let sut = CardViewModel()
+
+        // Act.
+        // Assert.
+        #expect(sut.cards.isEmpty == false)
+    }
 }
