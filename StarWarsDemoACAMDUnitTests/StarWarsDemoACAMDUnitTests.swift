@@ -74,7 +74,7 @@ struct StarWarsDemoACAMDUnitTests {
     }
 
     @Test(
-        "Repository should get the expected number of Card",
+        "Repository should get the expected number of Card.",
         .tags(.cardRepository))
     func repositoryShouldGetExpectedNumberOfCard() async throws {
         // Arrange.
@@ -89,7 +89,7 @@ struct StarWarsDemoACAMDUnitTests {
     }
 
     @Test(
-        "Repository url should be nil when the file does not exist",
+        "Repository url should be nil when the file does not exist.",
         .tags(.cardRepository))
     func repositoryUrlShouldBeNilWhenFileDoesNotExist() async throws {
         // Arrange.
@@ -103,11 +103,13 @@ struct StarWarsDemoACAMDUnitTests {
         #expect(expected == actual)
     }
 
-    @Test("getCards() should throw when the file does not exist.", .tags(.cardRepository))
+    @Test(
+        "getCards() should throw when the file does not exist.",
+        .tags(.cardRepository))
     func getCardsShouldThrowWhenFileDoesNotExist() async throws {
         // Arrange.
         let sut = CardRepository(from: "FileThatDoesNotExist")
-        
+
         // Act.
         // Assert.
         #expect(throws: Error.self) {
