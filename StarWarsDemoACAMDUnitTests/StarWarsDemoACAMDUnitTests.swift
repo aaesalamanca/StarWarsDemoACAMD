@@ -102,4 +102,16 @@ struct StarWarsDemoACAMDUnitTests {
         // Assert.
         #expect(expected == actual)
     }
+
+    @Test("getCards() should throw when the file does not exist.", .tags(.cardRepository))
+    func getCardsShouldThrowWhenFileDoesNotExist() async throws {
+        // Arrange.
+        let sut = CardRepository(from: "FileThatDoesNotExist")
+        
+        // Act.
+        // Assert.
+        #expect(throws: Error.self) {
+            let cards = try sut.getCards()
+        }
+    }
 }
