@@ -5,6 +5,7 @@
 //  Created by Alejandro Antonio Estornell Salamanca on 29/10/24.
 //
 
+import Foundation
 import Testing
 
 @testable import StarWarsDemoACAMD
@@ -82,6 +83,21 @@ struct StarWarsDemoACAMDUnitTests {
 
         // Act.
         let actual = try sut.getCards().count
+
+        // Assert.
+        #expect(expected == actual)
+    }
+
+    @Test(
+        "Repository url should be nil when the file does not exist",
+        .tags(.cardRepository))
+    func repositoryUrlShouldBeNilWhenFileDoesNotExist() async throws {
+        // Arrange.
+        let sut = CardRepository(from: "FileThatDoesNotExist")
+        let expected: URL? = nil
+
+        // Act.
+        let actual = sut.url
 
         // Assert.
         #expect(expected == actual)
