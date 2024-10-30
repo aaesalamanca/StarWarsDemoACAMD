@@ -13,6 +13,7 @@ import Testing
 extension Tag {
     @Tag static var cardDTO: Self
     @Tag static var cardRepository: Self
+    @Tag static var cardViewModel: Self
 }
 
 struct StarWarsDemoACAMDUnitTests {
@@ -113,7 +114,7 @@ struct StarWarsDemoACAMDUnitTests {
         // Act.
         // Assert.
         #expect(throws: Error.self) {
-            let cards = try sut.getCards()
+            _ = try sut.getCards()
         }
     }
 }
