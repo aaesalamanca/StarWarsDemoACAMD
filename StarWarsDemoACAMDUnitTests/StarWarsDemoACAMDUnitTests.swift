@@ -81,7 +81,7 @@ struct StarWarsDemoACAMDUnitTests {
         let expected = 4
 
         // Act.
-        let actual = sut.getCards().count
+        let actual = try sut.getCards().count
 
         // Assert.
         #expect(expected == actual)
