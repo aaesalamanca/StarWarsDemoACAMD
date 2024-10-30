@@ -11,6 +11,7 @@ import Testing
 
 extension Tag {
     @Tag static var cardDTO: Self
+    @Tag static var cardRepository: Self
 }
 
 struct StarWarsDemoACAMDUnitTests {
@@ -69,5 +70,20 @@ struct StarWarsDemoACAMDUnitTests {
         for i in 0..<expected.count {
             #expect(expected[i] == actual[i])
         }
+    }
+
+    @Test(
+        "Repository should get the expected number of Card",
+        .tags(.cardRepository))
+    func repositoryShouldGetExpectedNumberOfCard() async throws {
+        // Arrange.
+        let sut = CardRepository(from: "StarWars Test")
+        let expected = 4
+
+        // Act.
+        let actual = sut.getCards().count
+
+        // Assert.
+        #expect(expected == actual)
     }
 }
