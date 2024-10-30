@@ -15,7 +15,8 @@ struct CardRepository {
     }
 
     func getCards() throws -> [Card] {
-        let data = try Data(contentsOf: url!)
+        let data = try Data(
+            contentsOf: (url ?? URL(string: "FileThatDoesNotExist"))!)
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
