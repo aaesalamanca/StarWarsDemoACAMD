@@ -5,6 +5,8 @@ La aplicación de este repositorio está basada en el trabajo que [Julio César 
 - Vídeo: [Crea tu primera App iOS con SWIFT 6, SwiftUI y Swift Testing](https://www.youtube.com/watch?v=4JlSxaIWRJ0)
 - Repositorio: [StarWarsDemo-MoureDev-Masterclass](https://github.com/applecodingacademy/StarWarsDemo-MoureDev-Masterclass)
 
+![Mockup de la aplicación que lista varios personajes de Star Wars](./Mockup.webp)
+
 No hay apenas diferencia con el repositorio original; el resultado final, la aplicación, ejecutándose sobre el simulador y el terminal es el mismo. Tan solo cambian algunas decisiones a nivel de desarrollo y código:
 
 - Mayor número de _unit tests_ para lograr un _coverage_ del 100 % y aumentar el número de ejemplos.
